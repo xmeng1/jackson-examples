@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/basic/basic.iml" filepath="$PROJECT_DIR$/basic/basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/jackson-examples.iml" filepath="$PROJECT_DIR$/jackson-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uncategory/uncategory.iml" filepath="$PROJECT_DIR$/uncategory/uncategory.iml" />
     </modules>
   </component>
 </project>
