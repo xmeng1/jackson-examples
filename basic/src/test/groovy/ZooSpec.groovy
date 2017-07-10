@@ -3,8 +3,14 @@ import spock.lang.Specification
 
 
 /**
- * Created by mengxin on 10/07/2017.
- */
+*  User:    mengxin
+*  Date:    10/07/2017
+*  Project: jackson-examples
+*  Package: $ { PACKAGE_NAME }
+*  Description: $ { NAME } .
+* @author mengxin
+* @version 1.0
+*/
 class ZooSpec extends Specification {
     def "test Zoo class serialize" (){
         given: "Dog object"
@@ -35,4 +41,8 @@ class ZooSpec extends Specification {
         !result.contains("type")
         !result.contains("dog")
     }
+    /*
+    with    polymorphic{"animal":{"type":"dog","name":"DogName","barkVolume":0.0}}
+    without polymorphic{"animal":{"name":"DogName","barkVolume":0.0}}
+    */
 }
