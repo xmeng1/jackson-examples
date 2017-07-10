@@ -45,4 +45,22 @@ class ZooSpec extends Specification {
     with    polymorphic{"animal":{"type":"dog","name":"DogName","barkVolume":0.0}}
     without polymorphic{"animal":{"name":"DogName","barkVolume":0.0}}
     */
+    def "test Zoo 1 class serialize for use:id.class" (){
+        given: "Dog object"
+        Zoo1.Dog dog = new Zoo1.Dog("DogName")
+        and: "Zoo object"
+        Zoo1 zoo = new Zoo1(dog)
+
+        when: "do serialize"
+        String result = new ObjectMapper().writeValueAsString(zoo)
+
+        then: "the result should contain type and dog"
+        println("with polymorphic" + result)
+        //result.contains("type")
+        //result.contains("dog")
+        //with polymorphic{"animal":{"type":"Zoo1$Dog","name":"DogName","barkVolume":0.0}}
+    }
+
+
+
 }

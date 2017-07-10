@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="basic" />
+        <module name="polymorphic" />
         <module name="uncategory" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="basic" target="1.8" />
       <module name="jackson-examples" target="1.8" />
+      <module name="polymorphic" target="1.8" />
       <module name="uncategory" target="1.8" />
     </bytecodeTargetLevel>
   </component>

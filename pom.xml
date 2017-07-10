@@ -15,6 +15,7 @@
     <modules>
         <module>basic</module>
         <module>uncategory</module>
+        <module>polymorphic</module>
     </modules>
 
     <repositories>

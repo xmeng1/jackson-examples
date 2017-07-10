@@ -12,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * @version 1.0
  */
 
-public class Zoo {
+public class Zoo2 {
     public Animal animal;
 
-    public Zoo(Animal animal) {
+    public Zoo2(Animal animal) {
         this.animal = animal;
     }
 

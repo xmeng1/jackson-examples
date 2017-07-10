@@ -1,5 +1,7 @@
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
@@ -12,14 +14,15 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * @version 1.0
  */
 
-public class Zoo {
+public class Zoo2 {
     public Animal animal;
 
-    public Zoo(Animal animal) {
+    public Zoo2(Animal animal) {
         this.animal = animal;
     }
 
-    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+    //@JsonTypeInfo(use = Id.NAME, include = As.WRAPPER_OBJECT, property = "type")
+    @JsonTypeInfo(use = Id.NAME, include = As.WRAPPER_ARRAY, property = "type")
     @JsonSubTypes({
             @JsonSubTypes.Type(value = Dog.class, name = "dog"),
             @JsonSubTypes.Type(value = Cat.class, name = "cat")})

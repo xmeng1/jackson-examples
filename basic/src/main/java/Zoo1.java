@@ -1,6 +1,5 @@
-import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 /**
  * User:    mengxin
@@ -12,17 +11,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * @version 1.0
  */
 
-public class Zoo {
+public class Zoo1 {
     public Animal animal;
 
-    public Zoo(Animal animal) {
+    public Zoo1(Animal animal) {
         this.animal = animal;
     }
 
-    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
-    @JsonSubTypes({
-            @JsonSubTypes.Type(value = Dog.class, name = "dog"),
-            @JsonSubTypes.Type(value = Cat.class, name = "cat")})
+    @JsonTypeInfo(use = Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "type")
     public static class Animal {
 
         public String name;
@@ -35,7 +31,6 @@ public class Zoo {
         }
     }
 
-    @JsonTypeName("dog")
     public static class Dog extends Animal {
         public double barkVolume;
 
@@ -44,7 +39,6 @@ public class Zoo {
         }
     }
 
-    @JsonTypeName("cat")
     public static class Cat extends Animal {
 
         boolean likesCream;
