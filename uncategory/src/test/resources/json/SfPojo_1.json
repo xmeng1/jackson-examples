@@ -1,0 +1,15 @@
+{
+  "device":"ABCD",
+  "ifces":[
+    {
+      "port":"ABCD:1/2/0",
+      "reservableBW":"1000",
+      "capabilites":[ "MPLS" ]
+    },
+    {
+      "port":"ABCD:1/2/1",
+      "reservableBW":"100",
+      "capabilites":[ "ETHERNET" ]
+    }
+  ]
+}
